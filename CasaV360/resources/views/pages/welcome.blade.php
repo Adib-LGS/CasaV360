@@ -1,34 +1,6 @@
 @extends('layouts.base')
 
 @section('content')
-  <header class="header">
-    <div class="overlay has-fade"></div>
-
-    <nav class="container container--pall flex flex-jc-sb flex-ai-c">
-        <a href="/" class="header__logo">
-          <img src="{{ url('images/logo.svg') }}" alt="Easybank" />
-        </a>
-
-        <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-
-        <div class="header__links hide-for-mobile">
-          <a href="#">Nos Services</a><a href="#">Gallerie</a><a href="#">Contactez-nous</a><a href="#">Site Immobilier</a>
-        </div>
-    </nav>
-
-    <div class="header__menu has-fade">
-      <a href="">Nos Services</a>
-      <a href="">Gallerie</a>
-      <a href="">Contactez-nous</a>
-      <a href="">Site Immobilier</a>
-    </div>
-
-  </header>
-
   <section class="hero">
     <div class="container">
         <div class="hero__image"></div>
@@ -40,7 +12,7 @@
           <p>
             Particulier ou Professionnel,<br>Laissez nous vous aider à vendre votre bien ou à faire découvrir votre commerce en un click tout en restant à la maison !
           </p>
-          <a href="#" class="button hero__cta">Contactez-nous</a>
+          <a href="{{ route('contact') }}" class="button hero__cta">Contactez-nous</a>
         </div>
     </div>
   </section>

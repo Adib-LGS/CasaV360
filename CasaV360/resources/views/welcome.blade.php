@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+@extends('layouts.base')
 
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ url('images/favicon-32x32.png') }}">
-        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url('css/style.css') }}">
-        <title>easyTour360</title>
-
-</head>
-<body>
-
+@section('content')
   <header class="header">
     <div class="overlay has-fade"></div>
 
     <nav class="container container--pall flex flex-jc-sb flex-ai-c">
         <a href="/" class="header__logo">
-          <img src="images/logo.svg" alt="Easybank" />
+          <img src="{{ url('images/logo.svg') }}" alt="Easybank" />
         </a>
 
         <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
@@ -195,5 +184,4 @@
  -->
 
   <script src="{{ url('js/script.js') }}"></script>
-</body>
-</html>
+@endsection

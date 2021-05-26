@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,4 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+Route::get('/contact', [ContactsController::class, 'create'])->name('contact');

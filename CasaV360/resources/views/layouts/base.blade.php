@@ -7,7 +7,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ url('images/favicon-32x32.png') }}">
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url('css/style.css') }}">
-        <title>CasaV360</title>
+        <title>{{ page_title($title ?? '')}}</title>
 
 </head>
 <body>

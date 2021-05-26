@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.base', ['title' => 'Bienvenue'])
 
 @section('content')
   <section class="hero">

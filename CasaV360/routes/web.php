@@ -16,5 +16,6 @@ use App\Http\Controllers\ContactsController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
+
 Route::get('/contact', [ContactsController::class, 'create'])->name('contact');
 Route::post('/contact', [ContactsController::class, 'store'])->name('contact.store');

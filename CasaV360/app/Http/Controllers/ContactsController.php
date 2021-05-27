@@ -23,7 +23,7 @@ class ContactsController extends Controller
             'message' => 'required|min:10'
         ]);
 
-        //Store data in DB
+        //Store client's messages in DB
         Contact::create($request->all());
 
         //Using Mail Facades to send emails
@@ -38,6 +38,6 @@ class ContactsController extends Controller
             $message->to(env('ADMIN_SUPPORT_EMAIL'))->subject($request->get('subject'));
         });
 
-        return back()->with('success', 'Nous avons bien reçus votre demande, une réponse vous sera envoyé dans les 24h');
+        return back()->with('success', 'Nous avons bien reçu votre demande, vous serez contacté dans les 24h.');
     }
 }

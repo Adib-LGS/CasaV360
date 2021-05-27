@@ -35,7 +35,7 @@ class ContactsController extends Controller
             'user_query' => $request->get('message'),
         ), function($message) use ($request){
             $message->from($request->email);
-            $message->to('exemple@inbox.mailtrap.io', 'exemple')->subject($request->get('subject'));
+            $message->to(env('ADMIN_SUPPORT_EMAIL'))->subject($request->get('subject'));
         });
 
         return back()->with('success', 'Nous avons bien reçus votre demande, une réponse vous sera envoyé dans les 24h');

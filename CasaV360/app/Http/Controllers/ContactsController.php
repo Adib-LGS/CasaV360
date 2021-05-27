@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactsController extends Controller
 {
@@ -16,7 +16,7 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|min:5',
+            'name' => 'required|min:3',
             'email' => 'required|email',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'subject'=>'required|min:3',
@@ -26,7 +26,8 @@ class ContactsController extends Controller
         //Store data in DB
         Contact::create($request->all());
 
-        \Mail::send('mail', array(
+        //Using Mail Facades to send emails
+        Mail::send('mail', array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),

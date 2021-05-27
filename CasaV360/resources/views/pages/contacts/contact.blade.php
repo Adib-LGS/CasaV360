@@ -17,7 +17,7 @@
 
         <div class="form-group">
             <label>Nom</label>
-            <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name">
+            <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name" value="{{ old('name') }}">
 
             <!-- Error -->
             @if ($errors->has('name'))
@@ -29,7 +29,7 @@
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email">
+            <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" value="{{ old('email') }}">
 
             @if ($errors->has('email'))
             <div class="error">
@@ -40,7 +40,7 @@
 
         <div class="form-group">
             <label>Téléphone</label>
-            <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone">
+            <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" value="{{ old('phone') }}">
 
             @if ($errors->has('phone'))
             <div class="error">
@@ -52,7 +52,7 @@
         <div class="form-group">
             <label>Sujet</label>
             <input type="text" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject"
-                id="subject">
+                id="subject" value="{{ old('subject') }}">
 
             @if ($errors->has('subject'))
             <div class="error">

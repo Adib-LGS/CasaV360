@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Mail;
 
 class ContactsController extends Controller
 {
@@ -22,7 +23,19 @@ class ContactsController extends Controller
             'message' => 'required|min:10'
         ]);
 
+        //Store data in DB
         Contact::create($request->all());
+
+        \Mail::send('mail', array(
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'subject' => $request->get('subject'),
+            'user_query' => $request->get('message'),
+        ), function($message) use ($request){
+            $message->from($request->email);
+            $message->to('exemple@inbox.mailtrap.io', 'exemple')->subject($request->get('subject'));
+        });
 
         return back()->with('success', 'Nous avons bien reçus votre demande, une réponse vous sera envoyé dans les 24h');
     }

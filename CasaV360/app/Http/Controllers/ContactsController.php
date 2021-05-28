@@ -17,7 +17,7 @@ class ContactsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|min:3',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:contacts',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'subject'=>'required|min:3',
             'message' => 'required|min:10'

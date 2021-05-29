@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ContactsController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,11 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 
 Route::get('/contact', [ContactsController::class, 'create'])->name('contact');
 Route::post('/contact', [ContactsController::class, 'store'])->name('contact.store');
+
+Auth::routes();
+
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin.home')->middleware('is_admin');
+
+Route::get('/user/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.home');
+
+

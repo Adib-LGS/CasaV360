@@ -40,8 +40,8 @@
     </div>
 
   </header>
-  <script src="{{ url('js/script.js') }}"></script>
     @yield('content')
+    <script src="{{ url('js/script.js') }}"></script>
 
 </body>
 </html>

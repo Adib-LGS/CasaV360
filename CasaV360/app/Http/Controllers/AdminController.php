@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Contact;
 
-class HomeController extends Controller
+
+class AdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,8 +27,12 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function admin()
+    public function show()
     {
-        return view('admin.home');
+        $mails = Contact::all();
+
+        //dd($mail);
+
+        return view('admin.home', compact('mails'));
     }
 }

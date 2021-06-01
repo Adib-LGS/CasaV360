@@ -23,16 +23,17 @@ class AdminController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
-    }
-
-    public function show()
-    {
+    {   
         $mails = Contact::all();
-
         //dd($mail);
 
         return view('admin.home', compact('mails'));
+    }
+
+    public function show($id)
+    {
+        $mail = Contact::findOrFail($id);
+
+        return view('admin.message', compact('mail'));
     }
 }

@@ -23,7 +23,8 @@ Route::post('/contact', [ContactsController::class, 'store'])->name('contact.sto
 
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'show'])->name('admin.home')->middleware('is_admin');
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home')->middleware('is_admin');
+Route::get('/admin/mail/{id}', [App\Http\Controllers\AdminController::class, 'show'])->whereNumber('id')->name('admin.message')->middleware('is_admin');
 
 //Route::get('/user/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.home');
 

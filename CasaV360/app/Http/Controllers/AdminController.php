@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -30,10 +30,15 @@ class AdminController extends Controller
         return view('admin.home', compact('mails'));
     }
 
-    public function show($id)
+    public function show($id) //Request $request
     {
-        $mail = Contact::findOrFail($id);
+        //if ($request->is('admin/*')) {
+            //dd($request->is('admin/*'));
+            $mail = Contact::findOrFail($id);
+            return view('admin.message', compact('mail'));
+       /* }else{
+            redirect()->route('login');
+        }*/
 
-        return view('admin.message', compact('mail'));
     }
 }

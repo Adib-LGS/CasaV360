@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ContactsController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,9 @@ Route::post('/contact', [ContactsController::class, 'store'])->name('contact.sto
 
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home')->middleware('is_admin');
-Route::get('/admin/mail/{id}', [App\Http\Controllers\AdminController::class, 'show'])->whereNumber('id')->name('admin.message')->middleware('is_admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.home')->middleware('is_admin');
+Route::get('/admin/mail/{id}', [AdminController::class, 'show'])->whereNumber('id')->name('admin.message')->middleware('is_admin');
 
-//Route::get('/user/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.home');
+//Route::get('/user/home', [HomeController::class, 'index'])->name('user.home');
 
 

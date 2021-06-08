@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container mt-5">
+<div id="contact-form" class="container mt-5">
     <h2>Un devis sur mesure ? <br> Ou besoin de précision ? </h2>
         <!-- Success message -->
         @if(Session::has('success'))

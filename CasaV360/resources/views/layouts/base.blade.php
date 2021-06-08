@@ -26,17 +26,26 @@
           <span></span>
           <span></span>
         </a>
-
+        @guest
         <div class="header__links hide-for-mobile">
           <a href="#">Nos Services</a><a href="#">Gallerie</a><a href="{{ route('contact') }}">Contactez-nous</a><a href="#">Site Immobilier</a>
+        @endguest
+        @auth
+          <a href="{{ route('admin.home') }}" class="header__logo">DashBoard</a>
+        @endauth
         </div>
     </nav>
 
     <div class="header__menu has-fade">
+    @guest
       <a href="">Nos Services</a>
       <a href="">Gallerie</a>
       <a href="{{ route('contact') }}">Contactez-nous</a>
       <a href="">Site Immobilier</a>
+    @endguest
+    @auth
+      <a href="{{ route('admin.home') }}" class="header__logo">DashBoard</a>
+    @endauth
     </div>
 
   </header>

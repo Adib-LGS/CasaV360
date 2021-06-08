@@ -576,7 +576,7 @@ button:hover::before, .button:hover::before {
 }
 
 .article__grid {
-  display: inline-block;
+  display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -585,7 +585,7 @@ button:hover::before, .button:hover::before {
 
 @media (min-width: 40em) {
   .article__grid {
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
@@ -594,7 +594,7 @@ button:hover::before, .button:hover::before {
 
 @media (min-width: 64em) {
   .article__grid {
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
@@ -610,6 +610,7 @@ button:hover::before, .button:hover::before {
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
   margin: auto;
+  padding: 1.875rem 1.875rem 2.5rem 1.875rem;
 }
 
 .article__item:hover {
@@ -813,7 +814,7 @@ button:hover::before, .button:hover::before {
 /*#**** 
   Contact Form 
 *****/
-.container {
+#contact-form {
   max-width: 500px;
   margin: 50px auto;
   text-align: left;
